@@ -8,6 +8,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # expose ssh port
 EXPOSE 22/tcp
-
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
+    && ln -s /usr/local/bin/docker-entrypoint.sh /
 # run entrypoint script
 ENTRYPOINT [ "docker-entrypoint.sh" ]
