@@ -10,5 +10,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 22/tcp
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
     && ln -s /usr/local/bin/docker-entrypoint.sh /
+    
+RUN mkdir -p /run/sshd
 # run entrypoint script
 ENTRYPOINT [ "docker-entrypoint.sh" ]
