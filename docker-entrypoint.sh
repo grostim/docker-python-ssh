@@ -88,6 +88,6 @@ ln -sf /proc/self/fd/1 /var/log/auth.log
 
 #Acces root
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-
+echo "root:$PASSWORD_HASH" | chpasswd --encrypted
 # start ssh service
 service ssh start
