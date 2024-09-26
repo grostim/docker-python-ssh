@@ -86,5 +86,8 @@ fi
 # link auth.log to container log
 ln -sf /proc/self/fd/1 /var/log/auth.log
 
+#Acces root
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
 # start ssh service
-/usr/sbin/sshd -D
+service ssh start
